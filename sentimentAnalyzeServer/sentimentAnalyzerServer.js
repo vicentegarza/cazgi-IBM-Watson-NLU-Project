@@ -12,9 +12,9 @@ function getNLUInstance() {
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
         version: '2021-03-25',
         authenticator: new IamAuthenticator({
-            apikey: '{api_key}',
+            apikey: api_key,
         }),
-        serviceUrl: '{api_url}',
+        serviceUrl: api_url,
     });
     return naturalLanguageUnderstanding;
 }
@@ -31,22 +31,22 @@ app.get("/",(req,res)=>{
   });
 
 app.get("/url/emotion", (req,res) => {
-    getNLUInstance;
+    /*getNLUInstance;*/
     return res.send({"happy":"90","sad":"10"});
 });
 
 app.get("/url/sentiment", (req,res) => {
-    getNLUInstance;
+    /*getNLUInstance;*/
     return res.send("url sentiment for "+req.query.url);
 });
 
 app.get("/text/emotion", (req,res) => {
-    getNLUInstance;
+    /*getNLUInstance;*/
     return res.send({"happy":"10","sad":"90"});
 });
 
 app.get("/text/sentiment", (req,res) => {
-    getNLUInstance;
+    /*getNLUInstance;*/
     return res.send("text sentiment for "+req.query.text);
 });
 
